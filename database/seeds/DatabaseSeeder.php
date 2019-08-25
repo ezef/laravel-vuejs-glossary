@@ -35,6 +35,12 @@ class DatabaseSeeder extends Seeder
             "created_at"  => \Carbon\Carbon::now(),
             "updated_at"  => \Carbon\Carbon::now(),
         ]);
+        DB::table('glossaries')->insert([
+            'name'        => 'The second one',
+            'language_id' => 1,
+            "created_at"  => \Carbon\Carbon::now(),
+            "updated_at"  => \Carbon\Carbon::now(),
+        ]);
         // terms seeding
         DB::table('terms')->insert([
             'word'        => 'Car',
