@@ -1,8 +1,7 @@
 <template>
   <b-card header="Card with list group">
     <b-list-group>
-      <b-list-group-item href="#">Cras justo odio</b-list-group-item>
-      <b-list-group-item href="#">Dapibus ac facilisis in</b-list-group-item>
+      <b-list-group-item v-for="glossary in glossaries">{{glossary.id}} | {{glossary.name}} | {{glossary.language.name}}</b-list-group-item>
 
     </b-list-group>
 
@@ -14,5 +13,17 @@
   </b-card>
 </template>
 <script>
-    export default {}
+import api from '../api/glossary';
+    export default {
+	  data() {
+	    return {glossaries: [],}
+	  },
+	  created() {
+	  	api.all().then((response) =>{
+	  		console.log(response.data.data);
+	  		this.glossaries = response.data.data;
+	  		});
+	  },
+
+    }
 </script>
