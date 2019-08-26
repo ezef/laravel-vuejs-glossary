@@ -4,7 +4,8 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import Topbar from './components/Topbar'
-import Glossaries from './views/Glossaries'
+import Glossaries from './views/glossary/Glossaries'
+import GlossaryEdit from './views/glossary/GlossaryEdit'
 
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
@@ -26,6 +27,11 @@ const router = new VueRouter({
             path: '/glossaries',
             name: 'glossaries',
             component: Glossaries
+        },
+                {
+            path: '/glossary/:id/edit',
+            name: 'glossary.edit',
+            component: GlossaryEdit
         },
     ],
 });

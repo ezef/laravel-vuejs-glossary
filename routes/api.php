@@ -19,5 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace ('Api')->group(function () {
     Route::get('/glossary', 'GlossaryController@index');
+    Route::get('/glossary/{glossary}/edit', 'GlossaryController@edit');
+
+    Route::get('/language', 'LanguageController@index');
 
 });

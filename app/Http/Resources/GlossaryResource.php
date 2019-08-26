@@ -16,9 +16,10 @@ class GlossaryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'       => $this->id,
-            'name'     => $this->name,
-            'language' => new LanguageResource($this->resource->language),
+            'id'          => $this->id,
+            'name'        => $this->name,
+            'language'    => new LanguageResource($this->resource->language),
+            'created_ago' => $this->updated_at->diffForHumans(),
         ];
     }
 }

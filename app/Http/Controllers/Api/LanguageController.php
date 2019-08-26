@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Glossary;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\GlossaryResource;
+use App\Http\Resources\LanguageResource;
+use App\Language;
 use Illuminate\Http\Request;
 
-class GlossaryController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class GlossaryController extends Controller
      */
     public function index()
     {
-        return GlossaryResource::collection(Glossary::all());
+        return LanguageResource::collection(Language::all());
     }
 
     /**
@@ -57,9 +57,9 @@ class GlossaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Glossary $glossary)
+    public function edit($id)
     {
-        return new GlossaryResource($glossary);
+        //
     }
 
     /**

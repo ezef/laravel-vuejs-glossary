@@ -5,6 +5,6 @@ export default {
         return axios.get('/api/glossary');
     },
     find(id) {
-        return axios.get(`/api/glossary/${id}`);
+        return axios.get(`/api/glossary/${id}/edit`);
     },
 };
