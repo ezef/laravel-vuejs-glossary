@@ -1,3 +1,3 @@
 <template>
-  <p>This is the dashboard</p>
+  <p style>This is the dashboard</p>
 </template>
