@@ -69,9 +69,14 @@ class GlossaryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Glossary $glossary, Request $request)
     {
-        //
+        $glossary->name        = $request->name;
+        $glossary->language_id = $request->language['id'];
+
+        $glossary->save();
+
+        return new GlossaryResource($glossary);
     }
 
     /**

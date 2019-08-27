@@ -24,7 +24,6 @@ import api from '../../api/glossary';
 	  },
 	  created() {
 	  	api.all().then((response) =>{
-	  		console.log(response.data.data);
 	  		this.glossaries = response.data.data;
 	  		});
 	  },
